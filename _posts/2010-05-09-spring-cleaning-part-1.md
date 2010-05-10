@@ -2,5 +2,14 @@
 layout: post
 title: Spring Cleaning
 ---
-# {{ page.title }}
 Hello, world!
+
+{% highlight r %}
+foo <- function(){
+
+  print( "Hello, world!" )
+
+}
+{% endhighlight %}
+
+Needs moar text?

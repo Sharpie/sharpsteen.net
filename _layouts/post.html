@@ -1,15 +1,18 @@
 ---
 layout: default
 ---
-<div id="post">
-{{ content }}
-</div>
 
-<div id="related">
-  <h2>Related Posts</h2>
+<h2>{{ page.title }}</h2>
+
+{{ content }}
+
+<small>{{ page.date | date_to_string }}</small>
+
   <ul class="posts">
-    {% for post in site.related_posts limit:3 %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
+    {% assign p = page.previous %}{% if p %}
+    <li><span>Previous: {{ p.date | date_to_string }}</span> &raquo; <a href="{{ p.url }}">{{ p.title }}</a></li>
+    {% endif %}
+    {% assign p = page.next %}{% if p %}
+    <li><span> Next: {{ p.date | date_to_string }}</span> &raquo; <a href="{{ p.url }}">{{ p.title }}</a></li>
+    {% endif %}
   </ul>
-</div>
