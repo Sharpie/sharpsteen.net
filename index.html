@@ -7,7 +7,7 @@ title: Charlie Sharpsteen
 
   {% for post in site.posts %}
     <div class="post">
-      <h2>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <span><h2>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></h2>
       {{ post.content }}
     </div>
   {% endfor %}
