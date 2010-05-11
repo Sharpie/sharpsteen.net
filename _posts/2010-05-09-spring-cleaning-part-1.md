@@ -1,15 +1,9 @@
 ---
 layout: post
-title: Spring Cleaning
+title: Spring Cleaning 2010: Part 1
 ---
-Hello, world!
+Well, not quite spring anymore but still an oppertunity to get some things
+redesigned.  This will hopefully be the first of many posts containing tips and
+tricks I stumble during the reorganization of my digital life.
 
-{% highlight r %}
-foo <- function(){
-
-  print( "Hello, world!" )
-
-}
-{% endhighlight %}
-
-Needs moar text?
+Stay tuned!
