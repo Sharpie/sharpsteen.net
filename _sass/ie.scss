@@ -1,0 +1,9 @@
+@import "blueprint";
+
+@include blueprint-ie;
+
+h1.title {
+  background: transparent;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#413B4780,endColorstr=#413B4780);
+  zoom: 1;
+}
