@@ -3,20 +3,9 @@ layout: default
 title: Charlie Sharpsteen
 ---
 
-<div id="home">
-
-  {% for post in site.posts %}
-    <div class="post">
-      <span><h2>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></h2>
-      {{ post.content }}
-    </div>
-  {% endfor %}
-
-<!--
-  <h1>Open Source Projects</h1>
-  <ul class="posts">
-    <li><a href="http://github.com/Sharpie/RTikZDevice/">tikzDevice:</a> A device for LaTeX-friendly output of <a href="http://www.r-project.org">R</a> graphics.</li>
-  </ul>
--->
-
-</div>
+{% for post in site.posts %}
+  <div class="post">
+    <span><h2>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></h2>
+    {{ post.content }}
+  </div>
+{% endfor %}
