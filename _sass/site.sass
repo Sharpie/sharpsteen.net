@@ -32,25 +32,39 @@ div
           :border-width 0px 1px 1px 1px
 
         a
-          :color #000
+          :color #97B2A6 !important
           :font-size 1.75em
-          :margin 0em 1em
+          :font-weight normal
           :text-decoration none
+          :margin 0em 1em
+
+          &:hover
+            :color #000 !important
 
   &#content
     :text-align left
 
   &#footer
     :margin-top 15px
-    :font-size 0.9em
-    :color #aaa
+    :padding 0.5em 0em 1em
+    :text-align center
+    :background-color #71858F
+
+    a
+      :color #FFF !important
+      :text-decoration none
+      :font-size 1.75em
+      :margin 0px
+
+      &:hover
+        :text-decoration underline
 
   &#schedule
     :margin-top 15px
 
   .post
     :margin-top 15px
-    :border-bottom 1px solid #ccc
+    :border-bottom 1px solid #71858F
 
 h1
   :color #FD3933
@@ -61,12 +75,16 @@ h1
 
   &.title
     :color #FFF
+    :background-color rgba( 65, 59, 71, 0.8 )
     :font-size 3em
     :font-weight bold
     :position absolute
-    :bottom 1ex
-    :left 1ex
-
+    :left 1px
+    :bottom -1px
+    :padding 200px 1ex 1ex
+    :border-right 1px
+    :border-color #FFF
+    :border-style solid
 
     a
       &:link, &:visited
@@ -76,34 +94,10 @@ h1
       &:hover
         :text-decoration underline
 
-.box
-  :background-color #CEFD9B
-  :padding 0.5em
-  :margin-bottom 1em
-
-  a
-    &:link, &:visited
-      :color #000
-      :font-weight bold
-      :text-decoration none
-
-    &:hover
-      :text-decoration underline
-
-  ul
-    :margin 0.25em 0.2em
-
-    li
-      :list-style none
-      :margin-top 1em
-      :display inline
-      :margin-right 0.4em
-      :margin-bottom 1em
-      :line-height 2.5
-
 a
-  &:link
-    :color #FD3933
+  :color #413B47 !important
+  :text-decoration none
+  :font-weight bold
 
-  &:visited
-    :color #F7807B
+  &:hover
+    :color #FCB26D !important
