@@ -6,13 +6,36 @@ div
     :width 760px
     :margin 0 auto
 
-  &#header
-    :height 200px
-    :background-image url('../images/mesh.jpg')
-    :border-width 1px
-    :border-color #000
-    :border-style solid
+  &#masthead
     :position relative
+    :height 200px
+
+    img
+      :border-width 1px
+      :border-color #000
+      :border-style solid
+
+  &#header
+    ul
+      :list-style none
+      :height 3em
+      :margin 0px
+      :padding 0px
+
+      li
+        :float left
+        :border-style solid
+        :border-width 0px 0px 1px 1px
+
+        &#last
+          :clear right
+          :border-width 0px 1px 1px 1px
+
+        a
+          :color #000
+          :font-size 1.75em
+          :margin 0em 1em
+          :text-decoration none
 
   &#content
     :text-align left
