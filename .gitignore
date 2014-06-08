@@ -1,2 +1,5 @@
-_drafts/
-_site/
+# Ignore docs files
+_gh_pages
+_site
+.ruby-version
+.bundle
