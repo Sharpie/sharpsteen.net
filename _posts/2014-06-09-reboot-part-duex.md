@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Reboot 2014: Cleaning Out the Cobwebs"
+categories: blag
 ---
 
 ```ruby
