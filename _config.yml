@@ -5,6 +5,7 @@ redcarpet:
     - tables
     - fenced_code_blocks
     - footnotes
+    - with_toc_data
 
 exclude:
   - Gemfile*
