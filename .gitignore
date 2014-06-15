@@ -3,3 +3,5 @@ _gh_pages
 _site
 .ruby-version
 .bundle
+Gemfile.lock
+Gemfile.local

@@ -1,5 +1,10 @@
 # Dependencies
-markdown:         redcarpet
+markdown: RedcarpetCustom
+redcarpet:
+  extensions:
+    - tables
+    - fenced_code_blocks
+    - footnotes
 
 # Permalinks
 permalink:        pretty
