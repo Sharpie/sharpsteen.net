@@ -6,6 +6,9 @@ redcarpet:
     - fenced_code_blocks
     - footnotes
 
+exclude:
+  - Gemfile*
+
 # Permalinks
 permalink:        pretty
 
