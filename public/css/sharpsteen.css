@@ -1,7 +1,35 @@
+@import url(font-stack-2.css);
+
+html {
+  font-family: TeXGyrePagella, Palatino, "Palatino Linotype", serif;
+}
+
 /* Relative positioning allows us to hang permalinks in the margin using
  * absolute positioning.*/
 h1, h2, h3, h4, h5, h6 {
   position: relative;
+  font-family: "Bitstream Vera Sans", sans-serif;
+}
+
+abbr {
+  font-variant: small-caps;
+}
+
+.sidebar,
+.pagination {
+  font-family: "Bitstream Vera Sans", sans-serif;
+}
+
+/* Inconsolata needs a scoch more size to work with Palatino as a body font */
+code,
+pre {
+  font-family: Inconsolata, monospace;
+  font-size: 1.05rem;
+}
+
+.gist .gist-file {
+  font-family: Inconsolata, monospace !important;
+  font-size: 1.05rem;
 }
 
 /* Hang the links into the margin. Except on very small screens where the
@@ -12,7 +40,8 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 38rem) {
   .header-link {
     position: absolute;
-    left: -1rem;
+    /* Vera has a full-width octothorpe, so it needs 0.5 em more room */
+    left: -1.5rem;
 
     margin-left: 0rem;
   }

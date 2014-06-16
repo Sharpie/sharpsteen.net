@@ -1,0 +1,78 @@
+/* Font Stack 2
+ * ============
+ *
+ * A tweak of Font Stack 1 that replaces Latin Modern with Bitstream Vera.
+ *
+ */
+
+@font-face {
+  font-family: 'Bitstream Vera Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('BitstreamVeraSans-Roman'),
+       local('Bitstream Vera Sans'),
+       url(../fonts/bitstreamverasans-regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'Bitstream Vera Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('BitstreamVeraSans-Bold'),
+       local('Bitstream Vera Sans Bold'),
+       url(../fonts/bitstreamverasans-bold.woff) format('woff');
+}
+
+/* No local fallbacks for these as they are all custom subsets that have had
+ * the ASCII numerals swapped out for oldstyle figures. This a hack to work
+ * around the following:
+ *
+ *   - The CSS font-feature-settings property is not universally supported.
+ *     So, we can't use `font-feature-settings: "onum" on;` to enable oldstyle
+ *     figures.
+ *
+ *   - It is difficult to create a MacRoman subset of the font, which reduces
+ *     it from 1239 glyphs to 235, without trashing the OpenType feature
+ *     tables that hold oldstyle figures and small caps.
+ */
+@font-face {
+  font-family: 'TeXGyrePagella';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/texgyrepagella-regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'TeXGyrePagella';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/texgyrepagella-bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'TeXGyrePagella';
+  font-style: italic;
+  font-weight: 400;
+  src: url(../fonts/texgyrepagella-italic.woff) format('woff');
+}
+/* Also has lining figures instead of oldstyle figures */
+@font-face {
+  font-family: 'TeXGyrePagella';
+  font-variant: small-caps;
+  font-weight: 400;
+  src: url(../fonts/texgyrepagella-misc.woff) format('woff');
+}
+
+
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inconsolata'),
+       url(../fonts/inconsolata-regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Inconsolata Bold'),
+       local('Inconsolata-Bold'),
+       url(../fonts/inconsolata-bold.woff) format('woff');
+}
