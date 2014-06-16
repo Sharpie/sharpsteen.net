@@ -1,3 +1,19 @@
+/* Relative positioning allows us to hang permalinks in the margin using
+ * absolute positioning.*/
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
+}
+
+/* Hang the links into the margin. Except on very small screens where the
+ * margin is tiny.*/
 .header-link {
   margin-left: 0.5rem;
+}
+@media (min-width: 38rem) {
+  .header-link {
+    position: absolute;
+    left: -1rem;
+
+    margin-left: 0rem;
+  }
 }
