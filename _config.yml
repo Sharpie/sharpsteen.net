@@ -11,7 +11,8 @@ exclude:
   - Gemfile*
 
 # Permalinks
-permalink:        pretty
+# Leave date off since it may change for some posts if they are updated.
+permalink:        /:categories/:title/
 
 # Setup
 title:            Sharpsteen.net
