@@ -10,6 +10,10 @@ redcarpet:
 exclude:
   - Gemfile*
 
+plugins:
+  - jekyll-paginate
+paginate: 5
+
 # Permalinks
 # Leave date off since it may change for some posts if they are updated.
 permalink:        /:categories/:title/
@@ -20,7 +24,6 @@ tagline:
 description: |
   Charlie Sharpsteen blogs here once in a blue moon.
 url:              http://sharpsteen.net
-paginate:         5
 
 author:
   name:          'Charlie Sharpsteen'
