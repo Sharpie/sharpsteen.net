@@ -1,4 +1,25 @@
-# Dependencies
+title: Sharpsteen.net
+description: |
+  Charlie Sharpsteen blogs here once in a blue moon.
+url: http://sharpsteen.net
+
+author:
+  name: Charlie Sharpsteen
+  url: http://sharpsteen.net
+
+github:
+  repo: https://github.com/Sharpie
+
+exclude:
+  - 'Gemfile*'
+
+permalink: /:categories/:title/
+
+plugins:
+  - jekyll-paginate
+
+paginate: 5
+
 markdown: redcarpet
 redcarpet:
   extensions:
@@ -7,28 +28,3 @@ redcarpet:
     - fenced_code_blocks
     - footnotes
     - with_toc_data
-
-exclude:
-  - Gemfile*
-
-plugins:
-  - jekyll-paginate
-paginate: 5
-
-# Permalinks
-# Leave date off since it may change for some posts if they are updated.
-permalink:        /:categories/:title/
-
-# Setup
-title:            Sharpsteen.net
-tagline: 
-description: |
-  Charlie Sharpsteen blogs here once in a blue moon.
-url:              http://sharpsteen.net
-
-author:
-  name:          'Charlie Sharpsteen'
-  url:           http://sharpsteen.net
-
-github:
-  repo:           https://github.com/Sharpie
