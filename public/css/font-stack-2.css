@@ -54,7 +54,7 @@
 }
 /* Also has lining figures instead of oldstyle figures */
 @font-face {
-  font-family: 'TeXGyrePagella';
+  font-family: 'TeXGyrePagellaSC';
   font-variant: small-caps;
   font-weight: 400;
   src: url(../fonts/texgyrepagella-misc.woff) format('woff');
