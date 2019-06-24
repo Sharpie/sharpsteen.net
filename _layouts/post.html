@@ -8,6 +8,9 @@ layout: default
   {{ content }}
 </div>
 
+<!-- Attach permalinks to all headings in the "post" element -->
+{% include header_links.html %}
+
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
@@ -24,5 +27,14 @@ layout: default
   </ul>
 </div>
 
-<!-- Attach permalinks to all headings in the "post" element -->
-{% include header_links.html %}
+<div class="comments">
+  <h2>Comments</h2>
+  <script src="https://utteranc.es/client.js"
+          repo="Sharpie/sharpsteen.net"
+          issue-term="pathname"
+          label="Comment"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+</div>

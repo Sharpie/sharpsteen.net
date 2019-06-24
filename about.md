@@ -17,6 +17,7 @@ This site is built from the following components:
 
   - Site compiled by [Jekyll][jekyll] using a theme based on
     [Mark Otto's Lanyon][lanyon].
+  - Comments connected to GitHub issues by [Utteranc.es][utterances].
   - Fonts sourced from Font Squirrel:
     * Headers: [Bitstream Vera Sans][bitstream-vera].
     * Body: [TeX Gyre Pagella][tex-gyre-pagella], with customized support
@@ -29,6 +30,7 @@ This site is built from the following components:
 
   [jekyll]: https://jekyllrb.com
   [lanyon]: https://github.com/poole/lanyon
+  [utterances]: https://utteranc.es/
 
   [bitstream-vera]: https://www.fontsquirrel.com/fonts/bitstream-vera-sans
   [tex-gyre-pagella]: https://www.fontsquirrel.com/fonts/tex-gyre-pagella
