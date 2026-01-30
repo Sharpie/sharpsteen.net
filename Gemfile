@@ -5,4 +5,4 @@ gem 'jekyll-paginate',                                     '~> 1.1'
 gem 'redcarpet',                                           '~> 3.4'
 
 # Custom additions go here.
-eval_gemfile "#{__FILE__}.local" if File.exists? "#{__FILE__}.local"
+eval_gemfile "#{__FILE__}.local" if File.exist? "#{__FILE__}.local"
