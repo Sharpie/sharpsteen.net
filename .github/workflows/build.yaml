@@ -1,0 +1,62 @@
+---
+name: Build Website
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  setup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 1
+    outputs:
+      archive: '${{ steps.set-params.outputs.archive }}'
+      name: '${{ steps.set-params.outputs.name }}'
+      tag: '${{ steps.set-params.outputs.tag }}'
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Set Project Params
+        id: set-params
+        run: |
+          TAG="$(date +'%Y%m%d')-$(git log --format=%h --max-count=1 |tr -d '\n')"
+          NAME="$(basename $GITHUB_REPOSITORY)"
+          ARCHIVE="$NAME-$TAG.tar.xz"
+
+          printf 'archive=%s\n' "$ARCHIVE" | tee -a $GITHUB_OUTPUT
+          printf 'name=%s\n' "$NAME" | tee -a $GITHUB_OUTPUT
+          printf 'tag=%s\n' "$TAG" | tee -a $GITHUB_OUTPUT
+
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 1
+    needs:
+      - setup
+    env:
+      ARCHIVE: '${{ needs.setup.outputs.archive }}'
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Build website
+        run: |
+          bundle exec jekyll build
+      - name: Archive website
+        run: |
+          tar -cJf "$ARCHIVE" _site/*
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: '${{ env.ARCHIVE }}'
+          path: '${{ env.ARCHIVE }}'
