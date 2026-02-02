@@ -54,7 +54,7 @@ jobs:
           bundle exec jekyll build
       - name: Archive website
         run: |
-          tar -cJf "$ARCHIVE" --strip-components=1 _site
+          tar -cJf "$ARCHIVE" -C _site .
 
       - uses: oras-project/setup-oras@v1
       - name: ORAS Login
