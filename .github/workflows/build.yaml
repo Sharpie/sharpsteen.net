@@ -54,7 +54,7 @@ jobs:
           bundle exec jekyll build
       - name: Archive website
         run: |
-          tar -cJf "$ARCHIVE" _site/*
+          tar --strip-components=1 -cJf "$ARCHIVE" _site
 
       - uses: actions/upload-artifact@v6
         with:
