@@ -62,4 +62,4 @@ jobs:
           printf '%s\n' "${{ secrets.GITHUB_TOKEN }}" | oras login ghcr.io -u github
       - name: ORAS Push
         run:
-          oras push ghcr.io/Sharpie/web-builds/${{ needs.setup.outputs.name }}:${{ needs.setup.outputs.tag }} --artifact-type application/x-gtar "$ARCHIVE"
+          oras push ghcr.io/sharpie/web-builds/${{ needs.setup.outputs.name }}:${{ needs.setup.outputs.tag }} --artifact-type application/x-gtar "$ARCHIVE"
