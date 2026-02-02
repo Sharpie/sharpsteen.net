@@ -56,7 +56,10 @@ jobs:
         run: |
           tar --strip-components=1 -cJf "$ARCHIVE" _site
 
-      - uses: actions/upload-artifact@v6
-        with:
-          name: '${{ env.ARCHIVE }}'
-          path: '${{ env.ARCHIVE }}'
+      - uses: oras-project/setup-oras@v1
+      - name: ORAS Login
+        run: |
+          printf '%s\n' "${{ secrets.GITHUB_TOKEN }}" | oras login ghcr.io -u github
+      - name: ORAS Push
+        run:
+          oras push ghcr.io/Sharpie/web-builds/${{ needs.setup.outputs.name }}:${{ needs.setup.outputs.tag }} --artifact-type application/x-gtar "$ARCHIVE"
