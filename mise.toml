@@ -1,0 +1,5 @@
+[tools]
+node = "25.5"
+wrangler = "4.61"
+
+oras = "latest"
