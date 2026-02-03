@@ -37,7 +37,7 @@ jobs:
     steps:
       - uses: oras-project/setup-oras@v1
       - name: Fetch Build
-        run:
+        run: |
           oras pull ghcr.io/sharpie/web-builds/${{ needs.setup.outputs.name }}:${{ needs.setup.outputs.tag }}
           tar xf "${{ needs.setup.outputs.archive }}"
 
