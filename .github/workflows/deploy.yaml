@@ -1,0 +1,49 @@
+---
+name: Deploy Website
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  setup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 1
+    outputs:
+      archive: '${{ steps.set-params.outputs.archive }}'
+      name: '${{ steps.set-params.outputs.name }}'
+      tag: '${{ steps.set-params.outputs.tag }}'
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Set Project Params
+        id: set-params
+        run: |
+          TAG="$(date +'%Y%m%d')-$(git log --format=%h --max-count=1 |tr -d '\n')"
+          NAME="$(basename $GITHUB_REPOSITORY)"
+          ARCHIVE="$NAME-$TAG.tar.xz"
+
+          printf 'archive=%s\n' "$ARCHIVE" | tee -a $GITHUB_OUTPUT
+          printf 'name=%s\n' "$NAME" | tee -a $GITHUB_OUTPUT
+          printf 'tag=%s\n' "$TAG" | tee -a $GITHUB_OUTPUT
+
+  ship:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 1
+    needs:
+      - setup
+    steps:
+      - uses: oras-project/setup-oras@v1
+      - name: Fetch Build
+        run:
+          oras pull ghcr.io/sharpie/web-builds/${{ needs.setup.outputs.name }}:${{ needs.setup.outputs.tag }}
+          tar xf "${{ needs.setup.outputs.archive }}"
+
+      - name: CloudFlare Push
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy --project-name=sharpsteen-net ${{ needs.setup.outputs.name }}-${{ needs.setup.outputs.tag }}
