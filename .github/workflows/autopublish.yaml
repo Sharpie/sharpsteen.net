@@ -1,0 +1,23 @@
+---
+name: Automatically publish new posts
+
+on:
+  push:
+    paths:
+      - '_posts/*.md'
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yaml
+    with:
+      ref: '${{ github.sha }}'
+    permissions:
+      contents: read
+      packages: write
+
+  deploy:
+    needs: build
+    uses: ./.github/workflows/deploy.yaml
+    with:
+      tag: '${{ needs.build.outputs.tag }}'
+    secrets: inherit

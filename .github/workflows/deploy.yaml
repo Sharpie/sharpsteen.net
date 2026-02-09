@@ -8,6 +8,12 @@ on:
         description: 'Docker tag to deploy'
         type: string
         required: true
+  workflow_call:
+    inputs:
+      tag:
+        description: 'Docker tag to deploy'
+        type: string
+        required: true
 
 jobs:
   setup:
