@@ -2,7 +2,12 @@
 name: Build Website
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    ref:
+      description: 'Git ref to build from'
+      type: string
+      required: true
+      default: 'main'
 
 permissions:
   contents: read
@@ -20,6 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
+          ref: '${{ inputs.ref }}'
           fetch-depth: 1
 
       - name: Set Project Params
