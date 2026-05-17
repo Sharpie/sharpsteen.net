@@ -2,5 +2,6 @@
 _gh_pages
 _site
 .DS_store
-.bundle
+.bundle/
 Gemfile.local
+vendor/
