@@ -1,5 +1,6 @@
 [tools]
-node = "25.5"
+node     = "25.5"
 wrangler = "4.61"
+ruby     = "4.0.4"
 
 oras = "latest"
