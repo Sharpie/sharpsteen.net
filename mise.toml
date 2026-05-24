@@ -1,6 +1,23 @@
+# This release graduated the Ruby "compile" setting
+# out of experimental status.
+min_version = "2026.2.8"
+
 [tools]
 node     = "25.5"
 wrangler = "4.61"
-ruby     = "4.0.4"
+ruby     = "4.0"
 
 oras = "latest"
+
+[settings.ruby]
+compile = false
+
+# Auto-add local binstubs.
+[env]
+_.path = ["./bin"]
+BUNDLE_PATH = "./vendor"
+
+# === Ruby Operations ===
+[tasks.bundle-install]
+run     = ["bundle install", "bundle binstubs rake"]
+sources = ["Gemfile", "Gemfile.local"]
